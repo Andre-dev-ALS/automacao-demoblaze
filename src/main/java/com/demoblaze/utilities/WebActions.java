@@ -208,8 +208,17 @@ public class WebActions {
 
 	/********* Link ************/
 
-	public WebActions(String link) {
+	public void clickOnLink(String link) {
 		driver.findElement(By.linkText(link)).click();
+	}
+
+	public void clickOnLink(WebElement element, int waitingTime) {
+		wait.waitForElementToBeVisible(element, waitingTime);
+		element.click();
+	}
+
+	public void clickOnLink(WebElement element) {
+		clickOnLink(element, WaitActions.STANDARD_TIME);
 	}
 
 	public void clickOnLink(By by, int waitingTime) {

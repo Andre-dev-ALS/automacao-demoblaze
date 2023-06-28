@@ -27,50 +27,73 @@ public class WaitActions {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(waitingTime));
 	}
 
-	public void waitForElementToBeVisible(WebElement webElement, int waitingTime) {
+	public boolean waitForElementToBeVisible(WebElement webElement, int waitingTime) {
 		try {
 			setWait(waitingTime);
 			getWait().until(ExpectedConditions.visibilityOf(webElement));
+			return true;
 		} catch (TimeoutException e) {
 			throw new TimeoutException("search timeout passed, and the element was not found", e);
 		}
 	}
 
-	public void waitForElementToBeVisible(By by, int waitingTime) {
+	public boolean waitForElementToBeVisible(WebElement webElement) {
+		return waitForElementToBeVisible(webElement, STANDARD_TIME);
+	}
+
+	public boolean waitForElementToBeVisible(By by, int waitingTime) {
 		try {
 			setWait(waitingTime);
 			getWait().until(ExpectedConditions.visibilityOfElementLocated(by));
+			return true;
 		} catch (TimeoutException e) {
 			throw new TimeoutException("past the search timeout, and the element was not found", e);
 		}
 	}
 
-	public void waitButtonBeClickable(WebElement element, int waitingTime) {
+	public boolean waitForElementToBeVisible(By by) {
+		return waitForElementToBeVisible(by, STANDARD_TIME);
+	}
+
+	public boolean waitButtonBeClickable(WebElement element, int waitingTime) {
 		try {
 			setWait(waitingTime);
 			getWait().until(ExpectedConditions.elementToBeClickable(element));
+			return true;
 		} catch (TimeoutException e) {
 			throw new TimeoutException("timeout passed, and the element could not be  clicked", e);
 		}
 	}
 
-	public void waitButtonBeClickable(By by, int waitingTime) {
+	public boolean waitButtonBeClickable(WebElement element) {
+		return waitButtonBeClickable(element, STANDARD_TIME);
+	}
+
+	public boolean waitButtonBeClickable(By by, int waitingTime) {
 		try {
 			setWait(waitingTime);
 			getWait().until(ExpectedConditions.elementToBeClickable(by));
+			return true;
 		} catch (TimeoutException e) {
 			throw new TimeoutException("timeout passed, and the element could not be  clicked");
 		}
-
 	}
 
-	public void waitTheAlertAppear(int waitingTime) {
+	public boolean waitButtonBeClickable(By by) {
+		return waitButtonBeClickable(by, STANDARD_TIME);
+	}
+
+	public boolean waitTheAlertAppear(int waitingTime) {
 		try {
 			setWait(waitingTime);
 			getWait().until(ExpectedConditions.alertIsPresent());
+			return true;
 		} catch (NoAlertPresentException e) {
 			throw new NoAlertPresentException("timeout passed, and no alert is present", e);
 		}
 	}
 
+	public boolean waitTheAlertAppear() {
+		return waitTheAlertAppear(STANDARD_TIME);
+	}
 }

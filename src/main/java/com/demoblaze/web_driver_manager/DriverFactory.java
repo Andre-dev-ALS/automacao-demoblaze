@@ -16,10 +16,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 	private WebDriver driver;
+	private BrowserConfigurationOptions browserConfiguration;
 	private static DriverType driverType;
 	private static EnvironmentType environmentType;
 
 	public DriverFactory() {
+		browserConfiguration = new BrowserConfigurationOptions();
 		driverType = getConfigFileReader().getBrowser();
 		environmentType = getConfigFileReader().getEnvironment();
 	}
@@ -56,7 +58,7 @@ public class DriverFactory {
 			break;
 		case CHROME:
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(browserConfiguration.getChromeOptions());
 			break;
 		case INTERNETEXPLORER:
 			WebDriverManager.iedriver().setup();
