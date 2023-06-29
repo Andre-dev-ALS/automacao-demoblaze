@@ -14,6 +14,7 @@ public class Hooks {
 	ScreenshotUtility screamShot;
 
 	public Hooks() {
+
 		screamShot = new ScreenshotUtility();
 	}
 

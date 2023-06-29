@@ -1,4 +1,4 @@
-package com.demoblaze.model;
+package com.demoblaze.login;
 
 import com.demoblaze.utilities.ExcelActions;
 

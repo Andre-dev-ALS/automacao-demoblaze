@@ -6,7 +6,7 @@ requisitos atendidos:
 
 1. 12 cenários de testes automatizados;
 2. tirado um print da tela da finalização de cada um dos testes;
-3. o nome de cada print está nomeado com o prefixo ID_0001 até o ID_00015 cada um representando um cenário de teste, além disso o nome contém a data e hora da execução, e no final do nome o resultado se o teste passou ou falhou;
+3. o nome de cada print está nomeado com o prefixo ID_0001 até o ID_0012 cada um representando um cenário de teste, além disso o nome contém a data e hora da execução, e no final do nome o resultado se o teste passou ou falhou;
 
 Tecnolôgias usadas:
 

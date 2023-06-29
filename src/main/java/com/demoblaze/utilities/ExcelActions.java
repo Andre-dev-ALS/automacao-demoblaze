@@ -65,6 +65,7 @@ public class ExcelActions {
 			dataFound = getFileCellValue(indexId, 0);
 			if (dataFound.equalsIgnoreCase(searchData)) {
 				dataFound = getFileCellValue(indexId, col);
+				break;
 			}
 		}
 		return dataFound;

@@ -1,4 +1,4 @@
-package com.demoblaze.pages;
+package com.demoblaze.login;
 
 import static com.demoblaze.utilities.Context.getWebDriverManager;
 
@@ -23,6 +23,9 @@ public class LoginPage {
 	@FindBy(id = "nameofuser")
 	private WebElement lblMensagemBemVindo;
 
+	@FindBy(id = "logout2")
+	private WebElement lblLinkLogout;
+
 	public LoginPage() {
 		PageFactory.initElements(getWebDriverManager().getDriver(), this);
 	}
@@ -45,6 +48,10 @@ public class LoginPage {
 
 	public WebElement getLblMensagemBemVindo() {
 		return lblMensagemBemVindo;
+	}
+
+	public WebElement getLblLinkLogout() {
+		return lblLinkLogout;
 	}
 
 }

@@ -1,6 +1,4 @@
-package com.demoblaze.steps;
-
-import com.demoblaze.logic.LoginLogic;
+package com.demoblaze.login;
 
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
@@ -41,6 +39,16 @@ public class LoginStep {
 	@Então("na página é mostrada uma mensagem de bem vindo ao usuário    em home")
 	public void naPáginaÉMostradaUmaMensagemDeBemVindoAoUsuárioEmHome() {
 		login.validarMensagemBemVindo();
+	}
+
+	@Quando("clico no link log out em home")
+	public void clicoNoLinkLogOutEmHome() {
+		login.clicarLinkSair();
+	}
+
+	@Então("é mostrado o link para fazer o login novamente em home")
+	public void éMostradoOLinkParaFazerOLoginNovamenteEmHome() {
+		login.validarLogout();
 	}
 
 }

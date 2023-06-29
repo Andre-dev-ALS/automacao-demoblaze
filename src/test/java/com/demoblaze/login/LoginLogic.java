@@ -1,4 +1,4 @@
-package com.demoblaze.logic;
+package com.demoblaze.login;
 
 import static com.demoblaze.utilities.Context.getConfigFileReader;
 import static com.demoblaze.utilities.Context.getWait;
@@ -8,8 +8,6 @@ import static com.demoblaze.utilities.Context.getWebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-import com.demoblaze.model.LoginModel;
-import com.demoblaze.pages.LoginPage;
 import com.demoblaze.utilities.WaitActions;
 import com.demoblaze.utilities.WebActions;
 
@@ -28,14 +26,8 @@ public class LoginLogic {
 		dadosAcesso = new LoginModel();
 	}
 
-	public void navegarParaPaginaInicial1() {
-		driver.get(getConfigFileReader().getApplicationUrl());
-		acaoWeb.clickOnLink(loginPage.getLblLinkLogin());
-	}
-
 	public void navegarParaPaginaInicial() {
 		driver.get(getConfigFileReader().getApplicationUrl());
-
 	}
 
 	public void clicarLinkFazerLogin() {
@@ -57,4 +49,13 @@ public class LoginLogic {
 	public void validarMensagemBemVindo() {
 		Assert.assertTrue(espera.waitForElementToBeVisible(loginPage.getLblMensagemBemVindo()));
 	}
+
+	public void clicarLinkSair() {
+		acaoWeb.clickOnLink(loginPage.getLblLinkLogout());
+	}
+
+	public void validarLogout() {
+		Assert.assertTrue(espera.waitForElementToBeVisible(loginPage.getLblLinkLogin()));
+	}
+
 }

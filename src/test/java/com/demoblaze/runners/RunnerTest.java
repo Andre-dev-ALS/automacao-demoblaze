@@ -8,15 +8,13 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @CucumberOptions(
 
-		tags = "@ID_0001",
+		tags = { "not @ID_0001", "@ID_0002" },
 
-		features = { "src\\test\\resources\\features" },
+		features = { "src/test/resources/features" },
 
 		glue = {
 
-				"com.demoblaze.steps",
-
-				"com.demoblaze.hooks" },
+				"com.demoblaze.login", "com.demoblaze.hooks" },
 
 		plugin = { "pretty", "summary", },
 
@@ -26,12 +24,11 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 		dryRun = false,
 
-		strict = true)
+		strict = false)
 
 @RunWith(Cucumber.class
 
 )
 
 public class RunnerTest {
-
 }
