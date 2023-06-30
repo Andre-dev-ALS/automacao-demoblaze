@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @CucumberOptions(
 
-		tags = { "not @ID_0001", "not @ID_0002", "@ID_0003" },
+		tags = { "not @ID_0001", "not @ID_0002", "not @ID_0003", "@ID_0004" },
 
 		features = {
 
