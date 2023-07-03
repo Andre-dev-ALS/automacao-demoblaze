@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @CucumberOptions(
 
-		tags = { "not @ID_0001", "not @ID_0002", "not @ID_0003", "@ID_0004" },
+		tags = { "@ID_0005" },
 
 		features = {
 
@@ -19,6 +19,8 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 				"com.demoblaze.login",
 
 				"com.demoblaze.cadastro",
+
+				"com.demoblaze.sobre",
 
 				"com.demoblaze.hooks" },
 
