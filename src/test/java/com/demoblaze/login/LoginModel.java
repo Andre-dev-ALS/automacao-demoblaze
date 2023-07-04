@@ -8,17 +8,23 @@ public class LoginModel {
 	static final String NOME_DA_PLANILHA = "dadosDeAcesso";
 
 	private String nomeDoUsuário;
+	private String email;
 	private String senha;
 	private ExcelActions excel;
 
 	public LoginModel() {
 		excel = new ExcelActions(CAMINHO_DA_PASTA_DE_TRABALHO, NOME_DA_PLANILHA);
 		nomeDoUsuário = setAtributo("nomeDeUsuário");
+		email = setAtributo("email");
 		senha = setAtributo("senha");
 	}
 
 	public String getNomeDoUsuário() {
 		return nomeDoUsuário;
+	}
+
+	public String getEmail() {
+		return email;
 	}
 
 	public String getSenha() {
