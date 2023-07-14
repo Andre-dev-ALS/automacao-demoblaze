@@ -10,12 +10,19 @@ public class FiltrarProdutoStep {
 		filtrarProdutoLogic = new FiltrarProdutoLogic();
 	}
 
-	@Quando("clico no link Laptops")
-	public void clicoNoLinkLaptops() {
-		filtrarProdutoLogic.clicarCategoriaLaptop();
+	@Quando("clico na categoria {string}")
+	public void clicoNaCategoria(String categoria) {
+		if (categoria.equalsIgnoreCase("Laptops")) {
+			filtrarProdutoLogic.clicarCategoriaLaptop();
+		} else if (categoria.equalsIgnoreCase("monitors")) {
+			filtrarProdutoLogic.clicarCategoriaMonitors();
+		} else {
+			throw new RuntimeException("erro no argumento passado");
+		}
 	}
 
 	@Então("é feita a validação da aparição do produto")
 	public void éFeitaAValidaçãoDaApariçãoDoProduto() {
+		filtrarProdutoLogic.validarApresentaçãoDoProdutoDell();
 	}
 }

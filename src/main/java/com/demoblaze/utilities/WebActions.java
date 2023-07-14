@@ -308,14 +308,14 @@ public class WebActions {
 		WebElement table = driver.findElement(by);
 		int indexColumn = getIndexColumn(column, table);
 
-		int row = getIndexRow(value, table, indexColumn);
+		getIndexRow(value, table, indexColumn);
 
-		WebElement cell = table.findElement(By.xpath(".//tr[" + row + "]/td[" + indexColumn + "]"));
+		WebElement cell = table.findElement(By.xpath(".//tr['" + 2 + "']/td['" + indexColumn + "']"));
 		return cell;
 	}
 
 	private int getIndexRow(String value, WebElement table, int column) {
-		List<WebElement> rows = table.findElements(By.xpath("./tbody/tr/td[" + column + "]"));
+		List<WebElement> rows = table.findElements(By.xpath("./tbody/tr/td['" + column + "']"));
 		int row = -1;
 		for (int i = 0; i < rows.size(); i++) {
 			if (rows.get(i).getText().equals(value)) {
@@ -328,7 +328,7 @@ public class WebActions {
 
 	private int getIndexColumn(String column, WebElement table) {
 		List<WebElement> columns = table.findElements(By.xpath(".//th"));
-		int idColumn = -1;
+		int idColumn = 0;
 		for (int i = 0; i < columns.size(); i++) {
 			if (columns.get(i).getText().equals(column)) {
 				idColumn = i + 1;
