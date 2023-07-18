@@ -13,7 +13,19 @@
  @ID_0008
  Cenário: adicionar um produto no carrinho com sucesso
 Quando clico na categoria "Monitors"
-E seleciono o primeiro produto da lista de resultados
+E seleciono um dos produtos  da lista de resultados
 E clico no link Add to cart
 E clico no link cart
 Então é validado se o produto foi adicionado
+
+@ID_0009
+Cenário: adicionar multiplos produtos no carrinho e validar o preço total
+Quando clico na categoria 'Laptops'
+E seleciono um dos produtos  da lista de resultados
+E clico no link Add to cart
+E clico no link Home
+Quando clico na categoria 'Monitors'
+E seleciono um dos produtos  da lista de resultados
+E clico no link Add to cart
+E clico no link cart 
+Então é validado se a soma do preço dos produtos adicionados é correta

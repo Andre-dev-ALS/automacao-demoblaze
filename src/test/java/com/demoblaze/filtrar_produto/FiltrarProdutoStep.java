@@ -25,4 +25,5 @@ public class FiltrarProdutoStep {
 	public void éFeitaAValidaçãoDaApariçãoDoProduto() {
 		filtrarProdutoLogic.validarApresentaçãoDoProdutoDell();
 	}
+
 }

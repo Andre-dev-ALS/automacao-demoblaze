@@ -14,6 +14,12 @@ public class CarrinhoPage {
 	@FindBy(id = "cartur")
 	private WebElement lblCarrinho;
 
+	@FindBy(xpath = "//a[contains(text(), 'Home')]")
+	private WebElement lblLinkHome;
+
+	@FindBy(id = "totalp")
+	private WebElement lblPrecoTotalCarrinho;
+
 	public CarrinhoPage() {
 		PageFactory.initElements(getWebDriverManager().getDriver(), this);
 	}
@@ -24,6 +30,14 @@ public class CarrinhoPage {
 
 	public WebElement getLblCarrinho() {
 		return lblCarrinho;
+	}
+
+	public WebElement getLblLinkHome() {
+		return lblLinkHome;
+	}
+
+	public WebElement getLblPrecoTotalCarrinho() {
+		return lblPrecoTotalCarrinho;
 	}
 
 }

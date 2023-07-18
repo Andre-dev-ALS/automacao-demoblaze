@@ -18,6 +18,9 @@ public class FiltrarProdutoPage {
 	@FindBy(xpath = "(//h4[@class='card-title']/a)[1]")
 	private WebElement lblProdutoSelecionado;
 
+	@FindBy(xpath = "//div[@class='card-block']/h5")
+	private WebElement lblPrecoProduto;
+
 	public FiltrarProdutoPage() {
 		PageFactory.initElements(getWebDriverManager().getDriver(), this);
 	}
@@ -36,6 +39,10 @@ public class FiltrarProdutoPage {
 
 	public WebElement getLblProdutoSelecionado() {
 		return lblProdutoSelecionado;
+	}
+
+	public WebElement getLblPrecoProduto() {
+		return lblPrecoProduto;
 	}
 
 }

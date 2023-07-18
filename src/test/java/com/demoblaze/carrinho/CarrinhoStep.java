@@ -14,8 +14,8 @@ public class CarrinhoStep {
 		carrinhoLogic = new CarrinhoLogic();
 	}
 
-	@Quando("seleciono o primeiro produto da lista de resultados")
-	public void selecionoOPrimeiroProdutoDaListaDeResultados() {
+	@Quando("seleciono um dos produtos  da lista de resultados")
+	public void selecionoUmDosProdutosDaListaDeResultados() {
 		filtrarProdutoLogic.selecionarProduto();
 	}
 
@@ -32,6 +32,17 @@ public class CarrinhoStep {
 	@Então("é validado se o produto foi adicionado")
 	public void éValidadoSeOProdutoFoiAdicionado() {
 		carrinhoLogic.validarProdutoNoCarrinho();
+	}
+
+	@Quando("clico no link Home")
+	public void clicoNoLinkHome() {
+
+		carrinhoLogic.clicarLinkHome();
+	}
+
+	@Então("é validado se a soma do preço dos produtos adicionados é correta")
+	public void éValidadoSeASomaDoPreçoDosProdutosAdicionadosÉCorreta() {
+		carrinhoLogic.validarPrecoTotal();
 	}
 
 }
