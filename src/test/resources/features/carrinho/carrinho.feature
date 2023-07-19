@@ -29,3 +29,12 @@ E seleciono um dos produtos  da lista de resultados
 E clico no link Add to cart
 E clico no link cart 
 Então é validado se a soma do preço dos produtos adicionados é correta
+
+@ID_0010
+Cenário: deletar um produto do carrinho
+Quando clico na categoria 'Monitors'
+E seleciono um dos produtos  da lista de resultados
+E clico no link Add to cart
+E clico no link cart
+Quando clico no link Delete
+Então é validado se o produto foi removido do carrinho

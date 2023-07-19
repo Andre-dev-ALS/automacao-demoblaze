@@ -20,6 +20,11 @@ public class CarrinhoPage {
 	@FindBy(id = "totalp")
 	private WebElement lblPrecoTotalCarrinho;
 
+	@FindBy(xpath = "(//tbody[@id='tbodyid']/tr/td/a[contains(text(), 'Delete')])[1]")
+	private WebElement lblDelete;
+	@FindBy(id = "tbodyid")
+	private WebElement lblTabela;
+
 	public CarrinhoPage() {
 		PageFactory.initElements(getWebDriverManager().getDriver(), this);
 	}
@@ -38,6 +43,14 @@ public class CarrinhoPage {
 
 	public WebElement getLblPrecoTotalCarrinho() {
 		return lblPrecoTotalCarrinho;
+	}
+
+	public WebElement getLblDelete() {
+		return lblDelete;
+	}
+
+	public WebElement getLblTabela() {
+		return lblTabela;
 	}
 
 }

@@ -31,7 +31,6 @@ public class FiltrarProdutoLogic {
 		filtrarProdutoPage = new FiltrarProdutoPage();
 		loginPage = new LoginPage();
 		precoProdutos = new ArrayList<>();
-
 	}
 
 	public void clicarCategoriaLaptop() {
@@ -54,33 +53,13 @@ public class FiltrarProdutoLogic {
 		espera.waitForElementToBeVisible(filtrarProdutoPage.getLblProdutoSelecionado());
 		nomeProduto = filtrarProdutoPage.getLblProdutoSelecionado().getText();
 		espera.waitForElementToBeVisible(filtrarProdutoPage.getLblPrecoProduto());
-		precoProdutos.add(filtrarProdutoPage.getLblPrecoProduto().getText().replaceAll("$", ""));
+		precoProdutos.add(filtrarProdutoPage.getLblPrecoProduto().getText());
 
 		acaoWeb.clickOnLink(filtrarProdutoPage.getLblProdutoSelecionado());
 	}
 
 	public static String getNomeProduto() {
 		return nomeProduto;
-	}
-
-	public WebDriver getDriver() {
-		return driver;
-	}
-
-	public WaitActions getEspera() {
-		return espera;
-	}
-
-	public WebActions getAcaoWeb() {
-		return acaoWeb;
-	}
-
-	public FiltrarProdutoPage getFiltrarProdutoPage() {
-		return filtrarProdutoPage;
-	}
-
-	public LoginPage getLoginPage() {
-		return loginPage;
 	}
 
 	public static List<String> getPrecoProdutos() {

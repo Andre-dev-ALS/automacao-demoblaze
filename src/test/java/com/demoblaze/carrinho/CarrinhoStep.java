@@ -45,4 +45,14 @@ public class CarrinhoStep {
 		carrinhoLogic.validarPrecoTotal();
 	}
 
+	@Quando("clico no link Delete")
+	public void clicoNoLinkDelete() {
+		carrinhoLogic.clicarLinkDelete();
+	}
+
+	@Então("é validado se o produto foi removido do carrinho")
+	public void éValidadoSeOProdutoFoiRemovidoDoCarrinho() {
+		carrinhoLogic.validarCarrinhoVazio();
+	}
+
 }
