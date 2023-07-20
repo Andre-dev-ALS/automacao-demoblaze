@@ -39,14 +39,20 @@ public class FiltrarProdutoLogic {
 		acaoWeb.clickOnLink(filtrarProdutoPage.getLblCategoriaLaptop());
 	}
 
-	public void validarApresentaçãoDoProdutoDell() {
-		Assert.assertTrue(espera.waitForElementToBeVisible(filtrarProdutoPage.getLblProdutoDell()));
-	}
-
 	public void clicarCategoriaMonitors() {
 		espera.waitForElementToBeVisible(loginPage.getLblMensagemBemVindo());
 		driver.navigate().refresh();
 		acaoWeb.clickOnLink(filtrarProdutoPage.getLblCategoriaMonitors());
+	}
+
+	public void clicarCategoriaPhones() {
+		espera.waitForElementToBeVisible(loginPage.getLblMensagemBemVindo());
+		driver.navigate().refresh();
+		acaoWeb.clickOnLink(filtrarProdutoPage.getLblCategoriaPhones());
+	}
+
+	public void validarApresentaçãoDoProdutoDell() {
+		Assert.assertTrue(espera.waitForElementToBeVisible(filtrarProdutoPage.getLblProdutoDell()));
 	}
 
 	public void selecionarProduto() {

@@ -38,3 +38,16 @@ E clico no link Add to cart
 E clico no link cart
 Quando clico no link Delete
 Então é validado se o produto foi removido do carrinho
+
+@ID_0011
+Cenário: adicionar multiplos itens no carrinho, remover um dos produtos e validar o preço final 
+Quando clico na categoria 'Laptops'
+E seleciono um dos produtos  da lista de resultados
+E clico no link Add to cart
+E clico no link Home
+Quando clico na categoria 'Monitors'
+E seleciono um dos produtos  da lista de resultados
+E clico no link Add to cart
+E clico no link cart
+Quando clico no link Delete
+Então é validado se o preço total foi alterado após a remoção de um produto

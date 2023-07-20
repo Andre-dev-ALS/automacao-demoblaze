@@ -55,4 +55,9 @@ public class CarrinhoStep {
 		carrinhoLogic.validarCarrinhoVazio();
 	}
 
+	@Então("é validado se o preço total foi alterado após a remoção de um produto")
+	public void éValidadoSeOPreçoTotalFoiAlteradoApósARemoçãoDeUmProduto() {
+		carrinhoLogic.validarPrecoTotal();
+	}
+
 }

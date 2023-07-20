@@ -1,8 +1,8 @@
 package com.demoblaze.hooks;
 
 import static com.demoblaze.utilities.Context.clearId;
-import static com.demoblaze.utilities.Context.getWebDriverManager;
 
+//import static com.demoblaze.utilities.Context.getWebDriverManager;
 import com.demoblaze.utilities.Context;
 import com.demoblaze.utilities.ScreenshotUtility;
 
@@ -27,6 +27,6 @@ public class Hooks {
 	public void finalizar(Scenario scenario) {
 		screamShot.takeScreenshot(scenario);
 		clearId();
-		getWebDriverManager().closeDriver();
+		// getWebDriverManager().closeDriver();
 	}
 }

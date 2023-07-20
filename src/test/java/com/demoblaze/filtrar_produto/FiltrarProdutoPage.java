@@ -10,8 +10,13 @@ public class FiltrarProdutoPage {
 
 	@FindBy(xpath = "//a[@id='itemc' and contains(text(), 'Laptops')]")
 	private WebElement lblCategoriaLaptop;
+
 	@FindBy(xpath = "//a[@id='itemc' and contains(text(), 'Monitors')]")
 	private WebElement lblCategoriaMonitors;
+
+	@FindBy(xpath = "//a[@id='itemc' and contains(text(), 'Phones')]")
+	private WebElement lblCategoriaPhones;
+
 	@FindBy(xpath = "//div[@class='card-block' and contains(*, 'Dell')]/h4")
 	private WebElement lblProdutoDell;
 
@@ -31,6 +36,10 @@ public class FiltrarProdutoPage {
 
 	public WebElement getLblCategoriaMonitors() {
 		return lblCategoriaMonitors;
+	}
+
+	public WebElement getLblCategoriaPhones() {
+		return lblCategoriaPhones;
 	}
 
 	public WebElement getLblProdutoDell() {

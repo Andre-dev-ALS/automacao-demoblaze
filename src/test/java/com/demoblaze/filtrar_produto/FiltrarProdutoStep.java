@@ -16,6 +16,8 @@ public class FiltrarProdutoStep {
 			filtrarProdutoLogic.clicarCategoriaLaptop();
 		} else if (categoria.equalsIgnoreCase("monitors")) {
 			filtrarProdutoLogic.clicarCategoriaMonitors();
+		} else if (categoria.equalsIgnoreCase("Phones")) {
+			filtrarProdutoLogic.clicarCategoriaPhones();
 		} else {
 			throw new RuntimeException("erro no argumento passado");
 		}

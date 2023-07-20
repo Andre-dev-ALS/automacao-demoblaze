@@ -2,6 +2,7 @@ package com.demoblaze.carrinho;
 
 import static com.demoblaze.utilities.Context.getWait;
 import static com.demoblaze.utilities.Context.getWebActions;
+import static com.demoblaze.utilities.Context.getWebDriverManager;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class CarrinhoLogic {
 	private WaitActions espera;
 	private WebActions acaoWeb;
 	private CarrinhoPage carrinhoPage;
+	private int precoTotal;
 
 	public CarrinhoLogic() {
 		espera = getWait();
@@ -46,7 +48,6 @@ public class CarrinhoLogic {
 	}
 
 	public void validarPrecoTotal() {
-		int precoTotal = 0;
 		for (int i = 0; i < FiltrarProdutoLogic.getPrecoProdutos().size(); i++) {
 			String precoFormatado = FiltrarProdutoLogic.getPrecoProdutos().get(i).replace("$", "");
 			precoTotal = precoTotal += Integer.parseInt(precoFormatado);
@@ -57,6 +58,8 @@ public class CarrinhoLogic {
 
 	public void clicarLinkDelete() {
 		acaoWeb.clickOnLink(carrinhoPage.getLblDelete());
+		FiltrarProdutoLogic.getPrecoProdutos().remove(0);
+		getWebDriverManager().getDriver().navigate().refresh();
 	}
 
 	public void validarCarrinhoVazio() {
