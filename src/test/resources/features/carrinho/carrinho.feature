@@ -19,7 +19,7 @@ E clico no link cart
 Então é validado se o produto foi adicionado
 
 @ID_0009
-Cenário: adicionar multiplos produtos no carrinho e validar o preço total
+Cenário: adicionar múltiplos produtos no carrinho e validar o preço total
 Quando clico na categoria 'Laptops'
 E seleciono um dos produtos  da lista de resultados
 E clico no link Add to cart
@@ -40,12 +40,12 @@ Quando clico no link Delete
 Então é validado se o produto foi removido do carrinho
 
 @ID_0011
-Cenário: adicionar multiplos itens no carrinho, remover um dos produtos e validar o preço final 
+Cenário: adicionar múltiplos itens no carrinho, remover um dos produtos e validar o preço final 
 Quando clico na categoria 'Laptops'
 E seleciono um dos produtos  da lista de resultados
 E clico no link Add to cart
 E clico no link Home
-Quando clico na categoria 'Monitors'
+Quando clico na categoria 'Phones'
 E seleciono um dos produtos  da lista de resultados
 E clico no link Add to cart
 E clico no link cart

@@ -5,6 +5,7 @@ import static com.demoblaze.utilities.Context.getWebActions;
 import static com.demoblaze.utilities.Context.getWebDriverManager;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
@@ -21,11 +22,13 @@ public class CarrinhoLogic {
 	private WebActions acaoWeb;
 	private CarrinhoPage carrinhoPage;
 	private int precoTotal;
+	private List<WebElement> linhas;
 
 	public CarrinhoLogic() {
 		espera = getWait();
 		acaoWeb = getWebActions();
 		carrinhoPage = new CarrinhoPage();
+		linhas = new ArrayList<>();
 	}
 
 	public void adicionarNoCarrinho() {
@@ -64,7 +67,16 @@ public class CarrinhoLogic {
 
 	public void validarCarrinhoVazio() {
 		espera.getWait().until(ExpectedConditions.invisibilityOf(carrinhoPage.getLblPrecoTotalCarrinho()));
-		List<WebElement> linhas = carrinhoPage.getLblTabela().findElements(By.tagName("tr"));
+		linhas.addAll(carrinhoPage.getLblTabela().findElements(By.tagName("tr")));
 		assertTrue(linhas.size() == 0);
+	}
+
+	public void limparCarrinho() {
+		List<WebElement> deletes = getWebDriverManager().getDriver()
+				.findElements(By.xpath("//tbody[@id='tbodyid']/tr/td/a[contains(text(), 'Delete')]"));
+
+		for (WebElement delete : deletes) {
+			acaoWeb.clickOnLink(delete);
+		}
 	}
 }
