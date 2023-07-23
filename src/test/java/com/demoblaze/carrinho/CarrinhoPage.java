@@ -25,6 +25,9 @@ public class CarrinhoPage {
 	@FindBy(id = "tbodyid")
 	private WebElement lblTabela;
 
+	@FindBy(xpath = "//button[contains(text(), 'Place Order')]")
+	private WebElement btmFazerPedido;
+
 	public CarrinhoPage() {
 		PageFactory.initElements(getWebDriverManager().getDriver(), this);
 	}
@@ -51,6 +54,10 @@ public class CarrinhoPage {
 
 	public WebElement getLblTabela() {
 		return lblTabela;
+	}
+
+	public WebElement getBtmFazerPedido() {
+		return btmFazerPedido;
 	}
 
 }

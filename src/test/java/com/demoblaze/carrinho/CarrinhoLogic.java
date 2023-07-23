@@ -79,4 +79,8 @@ public class CarrinhoLogic {
 			acaoWeb.clickOnLink(delete);
 		}
 	}
+
+	public void clicarBotãoComprar() {
+		acaoWeb.clickButton(carrinhoPage.getBtmFazerPedido());
+	}
 }

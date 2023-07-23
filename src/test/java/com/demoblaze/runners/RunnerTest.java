@@ -8,13 +8,12 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @CucumberOptions(
 
-		tags = { "@ID_0011" },
+		tags = { "@ID_0012" },
 
 		features = { "src/test/resources/features" }, glue = { "com.demoblaze.login", "com.demoblaze.cadastro",
 				"com.demoblaze.contato", "com.demoblaze.filtrar_produto", "com.demoblaze.sobre",
-				"com.demoblaze.carrinho", "com.demoblaze.hooks" },
-
-		plugin = { "pretty", "summary", },
+				"com.demoblaze.carrinho", "com.demoblaze.compra",
+				"com.demoblaze.hooks" }, plugin = { "pretty", "summary", },
 
 		snippets = SnippetType.CAMELCASE,
 
