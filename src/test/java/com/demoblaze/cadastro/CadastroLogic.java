@@ -1,7 +1,6 @@
 package com.demoblaze.cadastro;
 
 import static com.demoblaze.utilities.Context.getWebActions;
-import static com.demoblaze.utilities.Context.getWebDriverManager;
 
 import java.util.Random;
 
@@ -16,7 +15,6 @@ public class CadastroLogic {
 	private CadastroModel dadosCadastro;
 
 	public CadastroLogic() {
-		getWebDriverManager().getDriver();
 		acaoWeb = getWebActions();
 		cadastroPage = new cadastroPage();
 		aleatorio = new Random();
@@ -42,7 +40,7 @@ public class CadastroLogic {
 	}
 
 	public void validarMensagemCadastroBemSucedido() {
-		Assert.assertEquals("Sign up successful.", acaoWeb.getTextAndAcceptAlert());
+		Assert.assertEquals(cadastroPage.getLblCadastroBemSucedido(), acaoWeb.getTextAndAcceptAlert());
 	}
 
 	public void preencherCampoNome() {
@@ -54,6 +52,6 @@ public class CadastroLogic {
 	}
 
 	public void validarMensagemDeUsuarioJaExistente() {
-		Assert.assertEquals("This user already exist.", acaoWeb.getTextAndAcceptAlert());
+		Assert.assertEquals(cadastroPage.getLblUsuarioExistente(), acaoWeb.getTextAndAcceptAlert());
 	}
 }

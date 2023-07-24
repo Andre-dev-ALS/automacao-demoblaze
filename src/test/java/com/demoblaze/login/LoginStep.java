@@ -5,50 +5,50 @@ import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 
 public class LoginStep {
-	private LoginLogic login;
+	private LoginLogic loginLogic;
 
 	public LoginStep() {
-		login = new LoginLogic();
+		loginLogic = new LoginLogic();
 	}
 
 	@Dado("que estou na página inicial")
 	public void queEstouNaPáginaInicial() {
-		login.navegarParaPaginaInicial();
+		loginLogic.navegarParaPaginaInicial();
 	}
 
-	@Quando("clico  no link Log in em home")
-	public void clicoNoLinkLogInEmHome() {
-		login.clicarLinkFazerLogin();
+	@Quando("clico  no link Log in")
+	public void clicoNoLinkLogIn() {
+		loginLogic.clicarLinkFazerLogin();
 	}
 
-	@Quando("preencho o campo Username en login")
-	public void preenchoOCampoUsernameEnLogin() {
-		login.preencherCampoNome();
+	@Quando("preencho o campo Username")
+	public void preenchoOCampoUsername() {
+		loginLogic.preencherCampoNome();
 	}
 
-	@Quando("preencho o campo Password en login")
-	public void preenchoOCampoPasswordEnLogin() {
-		login.preencherCampoSenha();
+	@Quando("preencho o campo Password")
+	public void preenchoOCampoPassword() {
+		loginLogic.preencherCampoSenha();
 	}
 
-	@Quando("clico no botão Log in em login")
-	public void clicoNoBotãoLogInEmLogin() {
-		login.clicarBotaoEntrar();
+	@Quando("clico no botão Log in")
+	public void clicoNoBotãoLogIn() {
+		loginLogic.clicarBotaoEntrar();
 	}
 
-	@Então("na página é mostrada uma mensagem de bem vindo ao usuário    em home")
-	public void naPáginaÉMostradaUmaMensagemDeBemVindoAoUsuárioEmHome() {
-		login.validarMensagemBemVindo();
+	@Então("na página é mostrada uma mensagem de bem vindo ao usuário")
+	public void naPáginaÉMostradaUmaMensagemDeBemVindoAoUsuário() {
+		loginLogic.validarMensagemBemVindo();
 	}
 
-	@Quando("clico no link log out em home")
-	public void clicoNoLinkLogOutEmHome() {
-		login.clicarLinkSair();
+	@Quando("clico no link log out")
+	public void clicoNoLinkLogOut() {
+		loginLogic.clicarLinkSair();
 	}
 
-	@Então("é mostrado o link para fazer o login novamente em home")
-	public void éMostradoOLinkParaFazerOLoginNovamenteEmHome() {
-		login.validarLogout();
+	@Então("é mostrado o link para fazer o login novamente")
+	public void éMostradoOLinkParaFazerOLoginNovamente() {
+		loginLogic.validarLogout();
 	}
 
 }

@@ -9,13 +9,13 @@ import org.openqa.selenium.support.PageFactory;
 public class FiltrarProdutoPage {
 
 	@FindBy(xpath = "//a[@id='itemc' and contains(text(), 'Laptops')]")
-	private WebElement lblCategoriaLaptop;
+	private WebElement lblCategoriaLaptops;
 
 	@FindBy(xpath = "//a[@id='itemc' and contains(text(), 'Monitors')]")
-	private WebElement lblCategoriaMonitors;
+	private WebElement lblCategoriaMonitores;
 
 	@FindBy(xpath = "//a[@id='itemc' and contains(text(), 'Phones')]")
-	private WebElement lblCategoriaPhones;
+	private WebElement lblCategoriaTelefones;
 
 	@FindBy(xpath = "//div[@class='card-block' and contains(*, 'Dell')]/h4")
 	private WebElement lblProdutoDell;
@@ -30,16 +30,16 @@ public class FiltrarProdutoPage {
 		PageFactory.initElements(getWebDriverManager().getDriver(), this);
 	}
 
-	public WebElement getLblCategoriaLaptop() {
-		return lblCategoriaLaptop;
+	public WebElement getLblCategoriaLaptops() {
+		return lblCategoriaLaptops;
 	}
 
-	public WebElement getLblCategoriaMonitors() {
-		return lblCategoriaMonitors;
+	public WebElement getLblCategoriaMonitores() {
+		return lblCategoriaMonitores;
 	}
 
-	public WebElement getLblCategoriaPhones() {
-		return lblCategoriaPhones;
+	public WebElement getLblCategoriaTelefones() {
+		return lblCategoriaTelefones;
 	}
 
 	public WebElement getLblProdutoDell() {

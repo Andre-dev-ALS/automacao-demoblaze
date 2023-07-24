@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ContatoPage {
+
 	@FindBy(xpath = "//a[contains(text(), 'Contact')]")
 	private WebElement lblLinkContato;
 
@@ -22,8 +23,11 @@ public class ContatoPage {
 	@FindBy(xpath = "//button[contains(text(), 'Send message')]")
 	private WebElement btmEnviar;
 
+	private String lblMensagemEnviada;
+
 	public ContatoPage() {
 		PageFactory.initElements(getWebDriverManager().getDriver(), this);
+		lblMensagemEnviada = "Thanks for the message!!";
 	}
 
 	public WebElement getLblLinkContato() {
@@ -44,6 +48,10 @@ public class ContatoPage {
 
 	public WebElement getBtmEnviar() {
 		return btmEnviar;
+	}
+
+	public String getLblMensagemEnviada() {
+		return lblMensagemEnviada;
 	}
 
 }

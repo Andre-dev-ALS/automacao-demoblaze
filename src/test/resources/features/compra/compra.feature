@@ -5,12 +5,13 @@
   
   Contexto: usuário conectado
   Dado que estou na página inicial 
-  Quando clico  no link Log in em home
-  E preencho o campo Username en login
-  E preencho o campo Password en login
-      E clico no botão Log in em login
-
-@ID_0012
+  Quando clico  no link Log in 
+  E preencho o campo Username 
+  E preencho o campo Password 
+      E clico no botão Log in
+      
+       
+           @ID_0012
       Cenário: Finalizar o processo de compra com sucesso
 Quando clico na categoria 'Laptops'
 E seleciono um dos produtos  da lista de resultados

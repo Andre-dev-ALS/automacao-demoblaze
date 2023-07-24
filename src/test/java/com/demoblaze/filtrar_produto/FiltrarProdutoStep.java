@@ -13,11 +13,11 @@ public class FiltrarProdutoStep {
 	@Quando("clico na categoria {string}")
 	public void clicoNaCategoria(String categoria) {
 		if (categoria.equalsIgnoreCase("Laptops")) {
-			filtrarProdutoLogic.clicarCategoriaLaptop();
+			filtrarProdutoLogic.clicarCategoriaLaptops();
 		} else if (categoria.equalsIgnoreCase("monitors")) {
-			filtrarProdutoLogic.clicarCategoriaMonitors();
+			filtrarProdutoLogic.clicarCategoriaMonitores();
 		} else if (categoria.equalsIgnoreCase("Phones")) {
-			filtrarProdutoLogic.clicarCategoriaPhones();
+			filtrarProdutoLogic.clicarCategoriaTelefones();
 		} else {
 			throw new RuntimeException("erro no argumento passado");
 		}

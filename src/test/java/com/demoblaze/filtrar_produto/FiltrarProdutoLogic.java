@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 
 import com.demoblaze.login.LoginPage;
 import com.demoblaze.utilities.WaitActions;
@@ -16,7 +15,6 @@ import com.demoblaze.utilities.WebActions;
 
 public class FiltrarProdutoLogic {
 
-	private WebDriver driver;
 	private WaitActions espera;
 	private WebActions acaoWeb;
 	private FiltrarProdutoPage filtrarProdutoPage;
@@ -25,7 +23,6 @@ public class FiltrarProdutoLogic {
 	private static List<String> precoProdutos;
 
 	public FiltrarProdutoLogic() {
-		driver = getWebDriverManager().getDriver();
 		espera = getWait();
 		acaoWeb = getWebActions();
 		filtrarProdutoPage = new FiltrarProdutoPage();
@@ -33,22 +30,22 @@ public class FiltrarProdutoLogic {
 		precoProdutos = new ArrayList<>();
 	}
 
-	public void clicarCategoriaLaptop() {
+	public void clicarCategoriaLaptops() {
 		espera.waitForElementToBeVisible(loginPage.getLblMensagemBemVindo());
-		driver.navigate().refresh();
-		acaoWeb.clickOnLink(filtrarProdutoPage.getLblCategoriaLaptop());
+		getWebDriverManager().getDriver().navigate().refresh();
+		acaoWeb.clickOnLink(filtrarProdutoPage.getLblCategoriaLaptops());
 	}
 
-	public void clicarCategoriaMonitors() {
+	public void clicarCategoriaMonitores() {
 		espera.waitForElementToBeVisible(loginPage.getLblMensagemBemVindo());
-		driver.navigate().refresh();
-		acaoWeb.clickOnLink(filtrarProdutoPage.getLblCategoriaMonitors());
+		getWebDriverManager().getDriver().navigate().refresh();
+		acaoWeb.clickOnLink(filtrarProdutoPage.getLblCategoriaMonitores());
 	}
 
-	public void clicarCategoriaPhones() {
+	public void clicarCategoriaTelefones() {
 		espera.waitForElementToBeVisible(loginPage.getLblMensagemBemVindo());
-		driver.navigate().refresh();
-		acaoWeb.clickOnLink(filtrarProdutoPage.getLblCategoriaPhones());
+		getWebDriverManager().getDriver().navigate().refresh();
+		acaoWeb.clickOnLink(filtrarProdutoPage.getLblCategoriaTelefones());
 	}
 
 	public void validarApresentaçãoDoProdutoDell() {

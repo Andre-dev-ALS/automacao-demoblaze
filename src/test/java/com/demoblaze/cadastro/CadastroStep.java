@@ -10,13 +10,13 @@ public class CadastroStep {
 		cadastroLogic = new CadastroLogic();
 	}
 
-	@Quando("clico no link Sign up em home")
-	public void clicoNoLinkSignUpEmHome() {
+	@Quando("clico no link Sign up")
+	public void clicoNoLinkSignUp() {
 		cadastroLogic.clicarLinkCadastrar();
 	}
 
-	@Quando("preencho o campo Username: {string}  em Sign up")
-	public void preenchoOCampoUsernameEmSignUp(String string) {
+	@Quando("preencho o campo Username: {string}")
+	public void preenchoOCampoUsername(String string) {
 		if (string.equals("novo")) {
 			cadastroLogic.preencherCampoNomeDadoAleatorio();
 		} else {
@@ -24,8 +24,8 @@ public class CadastroStep {
 		}
 	}
 
-	@Quando("preencho o campo Password: {string} em Sign up")
-	public void preenchoOCampoPasswordEmSignUp(String tipo) {
+	@Quando("preencho o campo Password: {string}")
+	public void preenchoOCampoPassword(String tipo) {
 		if (tipo.equals("novo")) {
 			cadastroLogic.preencherCampoSenhaDadoAleatorio();
 		} else {
@@ -33,18 +33,18 @@ public class CadastroStep {
 		}
 	}
 
-	@Quando("clico no botão    Sign up em Sign up")
-	public void clicoNoBotãoSignUpEmSignUp() {
+	@Quando("clico no botão Sign up")
+	public void clicoNoBotãoSignUp() {
 		cadastroLogic.clicarBotaoCadastrar();
 	}
 
-	@Então("é mostrada uma mensagem de usuário cadastrado com sucesso em Sign up")
-	public void éMostradaUmaMensagemDeUsuárioCadastradoComSucessoEmSignUp() {
+	@Então("é mostrada uma mensagem de usuário cadastrado com sucesso")
+	public void éMostradaUmaMensagemDeUsuárioCadastradoComSucesso() {
 		cadastroLogic.validarMensagemCadastroBemSucedido();
 	}
 
-	@Então("é mostrada uma mensagem de usuário já cadastrado em Sign up")
-	public void éMostradaUmaMensagemDeUsuárioJáCadastradoEmSignUp() {
+	@Então("é mostrada uma mensagem de usuário já cadastrado")
+	public void éMostradaUmaMensagemDeUsuárioJáCadastrado() {
 		cadastroLogic.validarMensagemDeUsuarioJaExistente();
 	}
 }

@@ -20,8 +20,14 @@ public class cadastroPage {
 	@FindBy(xpath = "//button[contains(text(), 'Sign up')]")
 	private WebElement btmCadastrar;
 
+	private String lblCadastroBemSucedido;
+
+	private String lblUsuarioExistente;
+
 	public cadastroPage() {
 		PageFactory.initElements(getWebDriverManager().getDriver(), this);
+		lblCadastroBemSucedido = "Sign up successful.";
+		lblUsuarioExistente = "This user already exist.";
 	}
 
 	public WebElement getLblLinkCadastro() {
@@ -38,6 +44,14 @@ public class cadastroPage {
 
 	public WebElement getBtmCadastrar() {
 		return btmCadastrar;
+	}
+
+	public String getLblCadastroBemSucedido() {
+		return lblCadastroBemSucedido;
+	}
+
+	public String getLblUsuarioExistente() {
+		return lblUsuarioExistente;
 	}
 
 }
