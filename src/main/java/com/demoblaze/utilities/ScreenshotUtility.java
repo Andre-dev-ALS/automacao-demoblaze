@@ -16,7 +16,7 @@ import io.cucumber.core.api.Scenario;
 public class ScreenshotUtility {
 
 	public String getCurrentDateAndTime() {
-		String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy-HH-mm-ss"));
+		String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd_MM_yyyy_HH_mm_ss"));
 		return date;
 	}
 
@@ -24,14 +24,21 @@ public class ScreenshotUtility {
 		File imagens = ((TakesScreenshot) getWebDriverManager().getDriver()).getScreenshotAs(OutputType.FILE);
 		String mensagem;
 		if (scenario.isFailed()) {
-			mensagem = "Falhou";
+			mensagem = "FALHOU_";
 		} else {
-			mensagem = "Passou";
+			mensagem = "PASSOU_";
 		}
 		try {
-			String pastaImagens = new File("").getAbsolutePath() + "/evidencia/";
-			FileUtils.copyFile(imagens, new File(pastaImagens + Context.getId() + scenario.getName() + "-"
-					+ getCurrentDateAndTime() + "-" + mensagem + ".png"));
+			String pastaImagens = "";
+
+			if (scenario.isFailed()) {
+				pastaImagens = new File("").getAbsolutePath() + "/evidencia/falhou/";
+			} else {
+				pastaImagens = new File("").getAbsolutePath() + "/evidencia/passou/";
+			}
+
+			FileUtils.copyFile(imagens,
+					new File(pastaImagens + Context.getId() + "_ " + mensagem + getCurrentDateAndTime() + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

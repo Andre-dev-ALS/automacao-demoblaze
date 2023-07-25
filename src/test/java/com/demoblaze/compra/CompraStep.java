@@ -53,11 +53,13 @@ public class CompraStep {
 	@Quando("clico no botão Purchase")
 	public void clicoNoBotãoPurchase() {
 		compraLogic.clicarBotaoComprar();
+		compraLogic.clicarBotaoFechar();
 	}
 
 	@Então("é mostrada uma mensagem de agradecimento pela compra")
 	public void éMostradaUmaMensagemDeAgradecimentoPelaCompra() {
 		compraLogic.validarMensagemCompraConcluída();
+		compraLogic.clicarBotaoOk();
 	}
 
 }

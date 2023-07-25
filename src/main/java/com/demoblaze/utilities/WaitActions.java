@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitActions {
-	public static final int STANDARD_TIME = 15;
+	public static final int STANDARD_TIME = 30;
 	private WebDriver driver;
 	private WebDriverWait wait;
 

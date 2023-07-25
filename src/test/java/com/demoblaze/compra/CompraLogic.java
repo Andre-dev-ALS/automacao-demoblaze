@@ -1,6 +1,8 @@
 package com.demoblaze.compra;
 
+import static com.demoblaze.utilities.Context.getWait;
 import static com.demoblaze.utilities.Context.getWebActions;
+import static com.demoblaze.utilities.Context.getWebDriverManager;
 
 import org.junit.Assert;
 
@@ -43,6 +45,18 @@ public class CompraLogic {
 
 	public void clicarBotaoComprar() {
 		acaoWeb.clickButton(compraPage.getBtmComprar());
+		getWait().waitForElementToBeVisible(compraPage.getLblCompraConcluída());
+	}
+
+	public void clicarBotaoFechar() {
+		acaoWeb.clickButton(compraPage.getBtmFechar());
+		getWait().waitButtonBeClickable(compraPage.getBtmOk());
+	}
+
+	public void clicarBotaoOk() {
+		acaoWeb.executeJs("window.scrollBy(0, arguments[0])", compraPage.getBtmOk().getLocation().y);
+		acaoWeb.clickButton(compraPage.getBtmOk());
+		getWebDriverManager().getDriver().navigate().refresh();
 	}
 
 	public void validarMensagemCompraConcluída() {

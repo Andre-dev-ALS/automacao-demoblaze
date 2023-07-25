@@ -5,6 +5,7 @@ import static com.demoblaze.utilities.Context.getWebActions;
 import static com.demoblaze.utilities.Context.getWebDriverManager;
 import static org.junit.Assert.assertTrue;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,12 +24,14 @@ public class CarrinhoLogic {
 	private CarrinhoPage carrinhoPage;
 	private int precoTotal;
 	private List<WebElement> linhas;
+	List<WebElement> deletes;
 
 	public CarrinhoLogic() {
 		espera = getWait();
 		acaoWeb = getWebActions();
 		carrinhoPage = new CarrinhoPage();
 		linhas = new ArrayList<>();
+		deletes = new ArrayList<>();
 	}
 
 	public void adicionarNoCarrinho() {
@@ -72,15 +75,20 @@ public class CarrinhoLogic {
 	}
 
 	public void limparCarrinho() {
-		List<WebElement> deletes = getWebDriverManager().getDriver()
-				.findElements(By.xpath("//tbody[@id='tbodyid']/tr/td/a[contains(text(), 'Delete')]"));
+		espera.getWait().until(ExpectedConditions.visibilityOf(carrinhoPage.getLblTabela()));
+		deletes.addAll(getWebDriverManager().getDriver()
+				.findElements(By.xpath("//tbody[@id='tbodyid']/tr/td/a[contains(text(), 'Delete')]")));
 
 		for (WebElement delete : deletes) {
+			espera.getWait().until(ExpectedConditions.elementToBeClickable(delete));
 			acaoWeb.clickOnLink(delete);
+			getWebDriverManager().getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+			acaoWeb.executeJs("window.scrollBy(0, arguments[0])", carrinhoPage.getLblDelete().getLocation().y);
 		}
 	}
 
 	public void clicarBotãoComprar() {
+		espera.getWait().until(ExpectedConditions.visibilityOf(carrinhoPage.getLblTabela()));
 		acaoWeb.clickButton(carrinhoPage.getBtmFazerPedido());
 	}
 }

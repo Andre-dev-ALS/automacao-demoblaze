@@ -3,7 +3,7 @@
  Funcionalidade: ações de compra
   
   
-  Contexto: usuário conectado
+  Contexto:
   Dado que estou na página inicial 
   Quando clico  no link Log in 
   E preencho o campo Username 

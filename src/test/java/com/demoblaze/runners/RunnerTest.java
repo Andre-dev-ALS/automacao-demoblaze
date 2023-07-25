@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @CucumberOptions(
 
-		tags = { "@ID_0001" },
+		tags = { "@ID_0011" },
 
 		features = { "src/test/resources/features" }, glue = { "com.demoblaze.login", "com.demoblaze.cadastro",
 				"com.demoblaze.contato", "com.demoblaze.filtrar_produto", "com.demoblaze.sobre",

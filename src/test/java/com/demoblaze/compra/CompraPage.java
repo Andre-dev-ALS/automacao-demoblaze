@@ -30,6 +30,10 @@ public class CompraPage {
 
 	@FindBy(xpath = "//h2[contains(text(), 'Thank you for your purchase!')]")
 	private WebElement lblCompraConcluída;
+	@FindBy(xpath = "//button[contains(text(), 'OK')]")
+	private WebElement btmOk;
+	@FindBy(xpath = "(//button[contains(text(), 'Close')])[3]")
+	private WebElement btmFechar;
 
 	public CompraPage() {
 		PageFactory.initElements(getWebDriverManager().getDriver(), this);
@@ -66,6 +70,14 @@ public class CompraPage {
 
 	public WebElement getLblCompraConcluída() {
 		return lblCompraConcluída;
+	}
+
+	public WebElement getBtmFechar() {
+		return btmFechar;
+	}
+
+	public WebElement getBtmOk() {
+		return btmOk;
 	}
 
 }
